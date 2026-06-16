@@ -1,0 +1,15 @@
+# macOS junk files
+.DS_Store
+.AppleDouble
+.Spotlight-V100
+.Trashes
+._*
+
+# Files that might be created by macOS
+.localized
+
+# Python cache and temporary files
+__pycache__/
+tmp/
+temp/
+.venv/
