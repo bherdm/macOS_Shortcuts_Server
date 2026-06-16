@@ -6,17 +6,17 @@ This project provides a lightweight FastAPI server that listens for incoming POS
 
 ## 🚀 Features
 
-- **Remote Execution**: Trigger any macOS Shortcut by its name via a simple REST API.
+- **Remote Execution**: Trigger any macOS Shortcut by name via a simple REST API.
 - **Response Capture**: Receives the output of the shortcut and returns it in the HTTP response.
 - **Background Operation**: Includes a startup script that manages a Python virtual environment and runs the server in a `tmux` session for easy background management.
+- **Automated Setup**: Automatically checks for and installs required system dependencies (`tmux`, `python3`) using Homebrew.
 - **Health Checks**: Built-in `/health` endpoint for monitoring server status.
 
 ## 🛠 Prerequisites
 
 - **macOS**: Required (to access the macOS Shortcuts app).
-- **Python 3**: Installed (ideally via Homebrew).
-- **tmux**: Recommended for running the server in the background.
-- **Homebrew**: Used by the setup script to locate Python.
+- **Homebrew**: Required for automated dependency installation.
+- **Python 3 & tmux**: Handled automatically by the startup script.
 
 ## 📦 Installation & Setup
 
@@ -27,13 +27,17 @@ This project provides a lightweight FastAPI server that listens for incoming POS
    ```
 
 2. **Run the startup script:**
-   The included `start_server.py` script automates the creation of a virtual environment, installs dependencies (`fastapi`, `uvicorn`), and launches the server inside a `tmux` session.
+   The included `start_server.py` script automates the setup process. It:
+   - Checks for system dependencies (`tmux`, `python3`) and installs them via `brew` if they are missing.
+   - Creates a Python virtual environment.
+   - Installs required Python dependencies (`fastapi`).
+   - Launches the server inside a `tmux` session.
 
    ```bash
    python3 start_server.py
    ```
 
-   *Note: The startup script expects Python to be located at `/opt/homebrew/bin/python3`. If your Python path is different, please edit `start_server.py` accordingly.*
+   *Note: The startup script expects Python to be located at `/opt/homebrew/bin/python3` by default. If your Python path is different, please edit `start_server.py` accordingly.*
 
 ## 🚀 Usage
 
