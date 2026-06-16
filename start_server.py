@@ -67,8 +67,8 @@ def main():
 
     # 5. Ensure dependencies are installed in the venv (regardless of existence)
     pip_path = os.path.join(VENV_DIR, "bin", "pip")
-    print("[*] Ensuring dependencies (fastapi) are installed in the venv...")
-    run_command(f"{pip_path} install fastapi")
+    print("[*] Ensuring dependencies (fastapi and uvicorn) are installed in the venv...")
+    run_command(f"{pip_path} install fastapi uvicorn")
 
     # 6. Construct the command to run inside tmux
     # We source the venv to ensure 'uvicorn' is correctly resolved from the venv

@@ -30,7 +30,7 @@ This project provides a lightweight FastAPI server that listens for incoming POS
    The included `start_server.py` script automates the setup process. It:
    - Checks for system dependencies (`tmux`, `python3`) and installs them via `brew` if they are missing.
    - Creates a Python virtual environment.
-   - Installs required Python dependencies (`fastapi`).
+   - Installs required Python dependencies (`fastapi` and 'uvicorn').
    - Launches the server inside a `tmux` session.
 
    ```bash
